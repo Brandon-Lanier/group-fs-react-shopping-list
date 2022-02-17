@@ -7,4 +7,3 @@ CREATE TABLE list (
 	"unit" VARCHAR(20),
 	"purchased" BOOLEAN DEFAULT FALSE
 	);
-
