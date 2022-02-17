@@ -1,17 +1,15 @@
+import React from 'react'
 import {useState} from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import ItemForm from '../ItemForm/ItemForm';
-import ListItem from '../ListItem/ListItem';
-import AddItem from '../AddItem/AddItem';
+import RenderList from '../RenderList/RenderList';
 import Header from '../Header/Header.jsx'
 
 import './App.css';
 
 
 function App() {
-    const [newName, setNewName] = useState('');
-    const [newQuantity, setNewQuantity] = useState(0);  
-    const [newUnit, setNewUnit] = useState('');
+
     const [groceryList, setGroceryList] = useState([]);
 
     const addItem = () => {
@@ -42,7 +40,12 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <p>Under Construction...</p>
+                <ItemForm 
+                    addItem={addItem}
+                />
+                <RenderList 
+                    addItem={groceryList}
+                />
             </main>
         </div>
     );
