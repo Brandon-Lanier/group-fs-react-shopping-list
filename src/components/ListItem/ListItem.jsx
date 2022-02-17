@@ -1,7 +1,7 @@
 import './ListItem.css'
 
 function ListItem({item}) {
-
+    console.log(item);
     return (
         <div className="itemBox">
             <h3>{item.name}</h3>
