@@ -32,6 +32,7 @@ function App() {
           .then(response => {
             console.log(response.data);
             setGroceryList(response.data);
+            
           })
           .catch(err => {
             alert('error getting list');
