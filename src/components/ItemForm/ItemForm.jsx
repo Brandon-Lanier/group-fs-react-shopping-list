@@ -7,11 +7,10 @@ function ItemForm({addItem}) {
 
     const [newItem, setNewItem] = useState({name: '', quantity: 0, unit: ''})
 
-    const handleSubmit = (e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         addItem(newItem)
     }
-
 
     return (
         <div>

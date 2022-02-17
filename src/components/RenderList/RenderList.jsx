@@ -1,12 +1,12 @@
 import ListItem from '../ListItem/ListItem'
 
 
-function RenderList() {
+function RenderList({groceryList}) {
 
     return (
 
             <div className="listContainer">
-                {list.map(item => {
+                {groceryList.map(item => {
                     (<ListItem
                         key={item.id}
                         item={item}
