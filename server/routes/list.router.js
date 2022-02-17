@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newStudent = req.body.github_name;
+  const newItem = req.body;
   const sqlText = `INSERT INTO "list" (name, quantity, unit) VALUES ($1, $2, $3)`;
 
-  pool.query(sqlText, [])
+  pool.query(sqlText, [newItem])
       .then((result) => {
           res.sendStatus(201);
       })
