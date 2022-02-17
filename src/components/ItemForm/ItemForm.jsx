@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import React from 'react';
 
 function ItemForm({addItem}) {
     
@@ -9,7 +11,7 @@ function ItemForm({addItem}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addItem(newItem)
+        addItem(newItem);
     }
 
     return (

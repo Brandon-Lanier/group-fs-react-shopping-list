@@ -1,5 +1,5 @@
-import React from 'react'
-import {useState} from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import ItemForm from '../ItemForm/ItemForm';
 import RenderList from '../RenderList/RenderList';
@@ -12,7 +12,10 @@ function App() {
 
     const [groceryList, setGroceryList] = useState([]);
 
-    const addItem = () => {
+    useEffect(() => {
+        getList()}, []);
+
+    const addItem = (newItem) => {
         console.log('in Add Item')
         axios.post('/list', {name: newName, quantity: newQuantity, unit: newUnit})
         .then(response => {
@@ -27,14 +30,14 @@ function App() {
     const getList = () => {
         axios.get('/list')
           .then(response => {
-            setGroceryList(response.data)
+            console.log(response.data);
+            setGroceryList(response.data);
           })
           .catch(err => {
             alert('error getting list');
             console.log(err);
           })
       }
-
 
     return (
         <div className="App">
@@ -44,7 +47,7 @@ function App() {
                     addItem={addItem}
                 />
                 <RenderList 
-                    addItem={groceryList}
+                    groceryList={groceryList}
                 />
             </main>
         </div>
