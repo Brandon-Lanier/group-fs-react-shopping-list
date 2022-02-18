@@ -39,14 +39,24 @@ function App() {
             console.log(err);
           })
       }
+      const handleClearAll = () => {
+        console.log('In Clear ALl')
+        axios.delete('/list').then((response) => {
+          console.log('cleared all ')
+          getList();
+        })
+      }
+      
+
 
     return (
         <div className="App">
             <Header />
             <main>
                 <ItemForm 
-                    addItem={addItem}
-                />
+                    addItem={addItem} />
+                <button onClick={handleClearAll}>Delete All</button>
+          
                 <RenderList 
                     groceryList={groceryList}
                 />
