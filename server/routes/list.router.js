@@ -48,10 +48,9 @@ router.delete('/:id', (req, res) => {
 })
 
 // DELETE ALL
-router.delete('/clear', (req, res) => {
-  let reqId = req.params.id;
+router.delete('/', (req, res) => {
   let queryText = 'DELETE FROM "list";';
-  pool.query(queryText, [reqId])
+  pool.query(queryText)
     .then ((result) => {
         console.log('Basket emptied');
         res.sendStatus(200);
