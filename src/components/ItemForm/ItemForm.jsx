@@ -11,11 +11,11 @@ function ItemForm({ addItem }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setNewItem({name: newName, quantity: newQuantity, unit: newUnit})
-        addItem(newItem);
+        addItem({name: newName, quantity: newQuantity, unit: newUnit});
     }
 
-console.log(newItem);
+
+console.log(newName);
     return (
         <div>
             <form onSubmit={handleSubmit}>
