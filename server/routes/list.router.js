@@ -17,10 +17,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newItem = req.body;
-  const sqlText = `INSERT INTO "list" (name, quantity, unit) VALUES ($1, $2, $3)`;
+  const name = req.body.name;
+  const quantity = req.body.quantity;
+  const unit = req.body.unit;
+  const sqlText = `INSERT INTO "list" (name, quantity, unit) VALUES ($1, $2, $3);`;
 
-  pool.query(sqlText, [newItem])
+  pool.query(sqlText, [name, quantity, unit])
       .then((result) => {
           res.sendStatus(201);
       })
