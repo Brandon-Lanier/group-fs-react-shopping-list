@@ -1,4 +1,8 @@
 main {
-  width: 90%;
-  margin: auto;
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
 }

@@ -45,22 +45,22 @@ function App() {
           getList();
         })
       }
-      
-
-
 
     return (
         <div className="App">
             <Header />
             <main>
                 <ItemForm 
-                    addItem={addItem} />
+                    addItem={addItem}
+                />
                 <button onClick={handleClearAll}>Delete All</button>
-          
+              
+            </main>
+            <section className="Container">
                 <RenderList 
                     groceryList={groceryList}
                 />
-            </main>
+            </section>
         </div>
     );
 }
