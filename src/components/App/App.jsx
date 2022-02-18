@@ -16,8 +16,8 @@ function App() {
         getList()}, []);
 
     const addItem = (newItem) => {
-        console.log('in Add Item')
-        axios.post('/list', {name: newName, quantity: newQuantity, unit: newUnit})
+        console.log('in Add Item', newItem)
+        axios.post('/list', {newItem})
         .then(response => {
           getList();
         })
@@ -32,6 +32,7 @@ function App() {
           .then(response => {
             console.log(response.data);
             setGroceryList(response.data);
+            
           })
           .catch(err => {
             alert('error getting list');

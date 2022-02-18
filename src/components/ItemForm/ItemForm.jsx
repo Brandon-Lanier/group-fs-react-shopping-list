@@ -1,29 +1,31 @@
 import { useState } from 'react';
 import React from 'react';
 
-function ItemForm({addItem}) {
-    
-    // const [newName, setNewName] = useState('');
-    // const [newQuantity, setNewQuantity] = useState(0);  
-    // const [newUnit, setNewUnit] = useState(‘’);
+function ItemForm({ addItem }) {
 
-    const [newItem, setNewItem] = useState({name: '', quantity: 0, unit: ''})
+    const [newName, setNewName] = useState('');
+    const [newQuantity, setNewQuantity] = useState('');  
+    const [newUnit, setNewUnit] = useState('');
+
+    const [newItem, setNewItem] = useState({ name: '', quantity: '', unit: '' })
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setNewItem({name: newName, quantity: newQuantity, unit: newUnit})
         addItem(newItem);
     }
 
+console.log(newItem);
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
-                <input value={newItem.name} onChange={(e) => setNewItem({name: e.target.value}) }/>
-            <label htmlFor="quantity">Quantity</label>
-                <input value={newItem.quantity} onChange={(e) => setNewItem({quantity: e.target.value})}/>
-            <label htmlFor="unit">Unit</label>
-                <input value={newItem.unit} onChange={(e) => setNewItem({unit: e.target.value})} />
-            <input type="submit" value="Submit"/>
+                <label htmlFor="name">Name</label>
+                <input value={newName} onChange={(e) => setNewName(e.target.value)} />
+                <label htmlFor="quantity">Quantity</label>
+                <input value={newQuantity} onChange={(e) => setNewQuantity(e.target.value)} />
+                <label htmlFor="unit">Unit</label>
+                <input value={newUnit} onChange={(e) => setNewUnit(e.target.value)} />
+                <input type="submit" value="Submit" />
             </form>
 
 
