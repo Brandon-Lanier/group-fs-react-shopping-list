@@ -46,10 +46,12 @@ function App() {
                 <ItemForm 
                     addItem={addItem}
                 />
+            </main>
+            <section className="Container">
                 <RenderList 
                     groceryList={groceryList}
                 />
-            </main>
+            </section>
         </div>
     );
 }

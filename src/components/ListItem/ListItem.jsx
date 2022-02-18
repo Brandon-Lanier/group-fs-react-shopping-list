@@ -1,6 +1,7 @@
 import './ListItem.css'
 
 function ListItem({item}) {
+    
     return (
         <div className="itemBox">
             <h3>{item.name}</h3>

@@ -1,4 +1,11 @@
 main {
-  width: 90%;
-  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
 }
